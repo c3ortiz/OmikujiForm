@@ -8,10 +8,10 @@
 </head>
 <body>
     <h1 class="text-center">Bienvenido usuario!</h1>
-    <form class="p-5">
+    <form class="p-5" action="/omikuji/show" method="post">
       <div class="form-group">
           <label for="exampleFormControlSelect2">Pick a number from 1 to 9</label>
-          <select class="custom-select custom-select-sm">
+          <select class="custom-select custom-select-sm" name="number">
                 <option selected>Open this select menu</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -26,23 +26,23 @@
       </div>
       <div class="form-group">
           <label for="formGroupExampleInput">Enter the name of any city</label>
-          <input type="text" class="form-control" id="formGroupExampleInput">
+          <input type="text" class="form-control" id="formGroupExampleInput" name="city">
       </div>
       <div class="form-group">
                 <label for="formGroupExampleInput">Enter the name of any real person</label>
-                <input type="text" class="form-control" id="formGroupExampleInput">
+                <input type="text" class="form-control" id="formGroupExampleInput" name="person">
       </div>
       <div class="form-group">
                 <label for="formGroupExampleInput">Enter a professional endeavor or hobby</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Like coding!">
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Like coding!" name="hobby">
       </div>
       <div class="form-group">
                 <label for="formGroupExampleInput">Enter any type of living thing</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="It must be alive!">
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="It must be alive!" name="livingThing">
       </div>
       <div class="form-group">
                  <label for="formGroupExampleInput">Say something nice to someone</label>
-                 <input class="form-control form-control-lg" type="text">
+                 <input class="form-control form-control-lg" type="text" name="message">
       </div>
       <br />
       <button type="submit" class="btn btn-primary">Submit</button>
