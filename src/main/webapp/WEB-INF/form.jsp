@@ -8,12 +8,11 @@
 </head>
 <body>
     <h1 class="text-center">Bienvenido usuario!</h1>
-    <form class="p-5" action="/omikuji/show" method="post">
+    <form class="p-5" action="/omikuji" method="post">
       <div class="form-group">
           <label for="exampleFormControlSelect2">Pick a number from 1 to 9</label>
           <select class="custom-select custom-select-sm" name="number">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
+                <option selected value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
                 <option value="4">Four</option>

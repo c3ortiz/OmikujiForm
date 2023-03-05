@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class OmikujiController {
     @GetMapping("/omikuji")
@@ -20,24 +22,31 @@ public class OmikujiController {
             @RequestParam(value="person") String person,
             @RequestParam(value="hobby") String hobby,
             @RequestParam(value="livingThing") String livingThing,
-            @RequestParam(value="message") String message, Model model) {
+            @RequestParam(value="message") String message, HttpSession session) {
 
-        model.addAttribute(number);
-        model.addAttribute(city);
-        model.addAttribute(person);
-        model.addAttribute(hobby);
-        model.addAttribute(livingThing);
-        model.addAttribute(message);
+        session.setAttribute("number", number);
+        session.setAttribute("city", city);
+        session.setAttribute("person", person);
+        session.setAttribute("hobby", hobby);
+        session.setAttribute("livingThing", livingThing);
+        session.setAttribute("message", message);
+
+        System.out.println(number);
 
         return "redirect:/omikuji/show";
     }
 
     @GetMapping("/omikuji/show")
-    public String showFate(){
+    public String showFate(Model model, HttpSession session){
+
+        model.addAttribute("number", session.getAttribute("number"));
+        model.addAttribute("city", session.getAttribute("city"));
+        model.addAttribute("person", session.getAttribute("person"));
+        model.addAttribute("hobby", session.getAttribute("hobby"));
+        model.addAttribute("livingThing", session.getAttribute("livingThing"));
+        model.addAttribute("message", session.getAttribute("message"));
+
         return "fate.jsp";
     }
-
-
-
 
 }
